@@ -40,10 +40,19 @@ api.getEditCart = async (req, res) => {
 //Remove Cart function
 api.getRemoveCart = async (req, res) => {
 
-    console.log(req.body)
+    let request = `sessionid`
+    const payload = `sessionid`.split(',');
+    let notifications = '';  
+    for (let field of payload) {
+        if (req.params[field] === undefined || req.params[field] === '')
+            notifications += `${field} cannot be blank.Please enter a valid ${field}\n`;
+        request = request.replace(field, req.params[field])
+    }
+    if (notifications != '')
+        return res.send([{ code: 1, message: notifications }])
     const sqlq = require('../config/rawsql')
-    const result = await sqlq.query(`call psp_delete_cart_by_session_id`)
-    //let response = {}
+    const result = await sqlq.query(`call psp_delete_cart_by_session_id (${request})`)
+
 
     if (result != undefined)
         response = result
