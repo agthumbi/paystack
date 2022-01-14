@@ -1,6 +1,5 @@
 const app = require('express')();
 const cors = require('cors');
-
 const connection = require('./config/connpool.js')
 const bodyParser = require('body-parser');
 app.use('*', cors())
