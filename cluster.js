@@ -1,6 +1,6 @@
 
 
-
+//function to utilize all the processors of CPU
 var clster={}
 
 clster.run=(cluster)=>{
