@@ -13,10 +13,10 @@ clster.run=(cluster)=>{
     }
 
     cluster.on('online', function (worker) {
-        console.log('Worker ' + worker.process.pid + ' is online');
+      //  console.log('Worker ' + worker.process.pid + ' is online');
     });
     cluster.on('message', function (worker) {
-        console.log('warathis');
+      //  console.log('warathis');
         logger.debug('hahaha this is me '+new Date(0));
     });
 

@@ -12,9 +12,9 @@ app.use(morgan('dev'))
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 const port = 80;
-var main = {}
+
 //Application run
-main.run = async () => {
+app.run = async () => {
     var path = require('path');
     global.basePath = await path.resolve(__dirname);
     global.pool = await connection.pool
@@ -22,7 +22,7 @@ main.run = async () => {
 
     const api = await require('./apis/index.js');
 
-    app.use(api.validate)
+    //app.use(api.authenticate);
     app.get('/', api.index);
     app.get('/status', api.status);
 
@@ -44,6 +44,6 @@ main.run = async () => {
         console.log('Process ' + process.pid + ' is listening to all incoming requests');
     });
 
-    return main
+    return app
 }
-module.exports = main
+module.exports = app
