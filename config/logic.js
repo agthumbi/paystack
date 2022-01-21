@@ -28,4 +28,20 @@ logic.validatePayload = (payload, field) => {
         return `${field} cannot be blank.Please enter a valid ${field}\n`;
     return ''
 }
+logic.validateSignature = async (headers) => {
+    const defaultResult = [logic.response(2, 'Authentication Failed.Invalid signature')]
+    const { timestamp, nonce, signature } = headers
+    const cipher = (timestamp) + '$$PAYSTACK$$' + (nonce)
+    const matchSignature = await getSignature(cipher)
+    if ((matchSignature) === (signature))
+        return null
+    return defaultResult
+};
+logic.getSignature = (text) => {
+    var hash = CryptoJS.SHA256(text);
+    const secret_uffer = CryptoJS.enc.Base64.parse('Paystack is de best');
+    const hmac = CryptoJS.algo.HMAC.create(CryptoJS.algo.SHA256, secret_uffer)
+    hmac.update(hash, secret_uffer)
+    return hash.toString(CryptoJS.enc.Base64);
+};
 module.exports = logic
