@@ -26,8 +26,12 @@ api.getProductsByCategoryID = async (req, res) => {
     const categoryid = req.params.categoryid
     const sqlq = require('../config/rawsql')
     const result = await sqlq.query(`call psp_get_products_by_categoryId(${request})`)
+
     response = logic.validateResponse(result)
-    res.send(response)
+ 
+   
+    return res.json(response)
+
 }
 api.getProductByProductID = async (req, res) => {
     let request = `productid`
