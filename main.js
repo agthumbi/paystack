@@ -1,21 +1,28 @@
 const app = require('express')();
+const helmet = require('helmet')
 const cors = require('cors');
+const morgan = require('morgan')
 const connection = require('./config/connpool.js')
 const bodyParser = require('body-parser');
-app.use('*', cors())
-app.use(bodyParser.urlencoded({ extended: true }));
+
+app.use(helmet())
+app.use(cors())
+app.use(morgan('dev'))
+
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 const port = 80;
 var main = {}
+//Application run
 main.run = async () => {
     var path = require('path');
     global.basePath = await path.resolve(__dirname);
     global.pool = await connection.pool
     global.poolConnect = await connection.poolConnect
 
-
     const api = await require('./apis/index.js');
 
+    app.use(api.validate)
     app.get('/', api.index);
     app.get('/status', api.status);
 
