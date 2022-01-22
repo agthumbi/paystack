@@ -2,7 +2,7 @@ const logic = require('../config/logic')
 
 var api = {}
 
-var response={}
+var response = {}
 
 api.getProductsCategory = async (req, res) => {
 
@@ -22,15 +22,14 @@ api.getProductsByCategoryID = async (req, res) => {
     }
     if (notifications != '')
         return res.send([logic.response(2, notifications)])
-        
+
     const categoryid = req.params.categoryid
     const sqlq = require('../config/rawsql')
     const result = await sqlq.query(`call psp_get_products_by_categoryId(${request})`)
 
     response = logic.validateResponse(result)
- 
-   
-    return res.json(response)
+
+    return logic.final(response, res)
 
 }
 api.getProductByProductID = async (req, res) => {
@@ -47,8 +46,8 @@ api.getProductByProductID = async (req, res) => {
     const sqlq = require('../config/rawsql')
     const result = await sqlq.query(`call psp_get_product_by_product_id (${request})`)
     response = logic.validateResponse(result)
+    return logic.final(response, res)
 
-    res.send(response)
 }
 
 module.exports = api

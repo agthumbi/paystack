@@ -21,9 +21,7 @@ api.getAddCart = async (req, res) => {
     const result = await sqlq.query(`call psp_add_cart_by_session_id(${request});`)
 
     response = logic.validateResponse(result)
-
-
-    res.send(response)
+    return logic.final(response, res)
 }
 //Update Cart function
 api.getEditCart = async (req, res) => {
@@ -41,7 +39,7 @@ api.getEditCart = async (req, res) => {
     const result = await sqlq.query(`call psp_update_cart_by_session_id (${request});`)
     response = logic.validateResponse(result)
 
-    res.send(response)
+    return logic.final(response, res)
 }
 //Remove Cart function
 api.getRemoveCart = async (req, res) => {
@@ -58,7 +56,7 @@ api.getRemoveCart = async (req, res) => {
     const result = await sqlq.query(`call psp_delete_cart_by_session_id (${request});`)
     response = logic.validateResponse(result)
 
-    res.send(response)
+    return logic.final(response, res)
 }
 //View Cart function
 api.getViewCart = async (req, res) => {
@@ -80,11 +78,11 @@ api.getViewCart = async (req, res) => {
     response = logic.validateResponse(details)
     if (details.length > 0 && details[0].amount != undefined) {
         totalAmount = details.reduce((accum, item) => accum + item.amount, 0)
-        response = { totalAmount: totalAmount, details }
+        response = { totalAmount: totalAmount, result:details }
     }
 
 
-    res.send(response)
+    return logic.final(response, res)
 }
 //view checkout function
 api.getCheckout = async (req, res) => {
@@ -101,6 +99,6 @@ api.getCheckout = async (req, res) => {
     const result = await sqlq.query(`call psp_checkout_cart_by_session_id (${request})`)
     response = logic.validateResponse(result)
 
-    res.send(response)
+     return logic.final(response, res)
 }
 module.exports = api

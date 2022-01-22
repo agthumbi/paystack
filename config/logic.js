@@ -10,6 +10,28 @@ logic.response = (num, msg = '') => {
     return res[num]
 
 }
+logic.final = (arr, res) => {
+    if (arr.totalAmount != undefined)
+        arr = arr.result
+
+
+    if (arr[0].code != undefined) {
+        switch (arr[0].code) {
+            case 'E1':
+                return res.status(500).json(arr)
+            case 'E2':
+                return res.status(404).json(arr)
+            case 'E0':
+                return res.status(400).json(arr)
+
+
+        }
+    }
+
+
+
+    return res.status(200).json(arr)
+}
 //General response handler
 logic.validateResponse = (result) => {
     if (result === undefined)
