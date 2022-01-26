@@ -54,9 +54,10 @@ Import scheme usign MYSQL workbench wizard and make sure you got no errors.Downl
 
 ## PART II : Consume APIs
 
-Download the postman enviroment via the link below
+Download the postman enviroment via the link below.
 
-Click on the button below to access the API samples
+Click on the button below to access the API samples.
+
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/25d69b6291f65c89e675)
 
 
