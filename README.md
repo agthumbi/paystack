@@ -9,7 +9,6 @@ user can add to, remove from and edit inside a car.
 
 ## PART I: Download & Build on local
 
-### Method 1: From github
 #### 1) Clone the repository, install node packages  and verify routes locally
 
 ``` 
@@ -53,8 +52,11 @@ https://dev.mysql.com/downloads/installer/
 Import scheme usign MYSQL workbench wizard and make sure you got no errors.Download the below link to access data to import to your workbench
 
 
-##PART II : Consume APIs
+## PART II : Consume APIs
 
+Download the postman enviroment via the link below
+
+Click on the button below to access the API samples
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/25d69b6291f65c89e675)
 
 
