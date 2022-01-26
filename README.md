@@ -30,5 +30,21 @@ http://localhost/status/
 
 **Note**
 
-Make sure you dont have another port running to avoid conflict issues.
+Make sure you dont have another port ::80 running to avoid conflict issues.
+
+#### 3) Dependencies
+
+You will need to install MYSQL on the operating system you are using.Recommended is you can use MYSQL version 8
+Here is  the download link for your reference.You should follow the instructions on how install mysql-installer-web-community
+on their web page
+
+`https://dev.mysql.com/downloads/installer/`
+
+```
+mysql-installer-web-community-8*.ms
+
+```
+
+
+
 
