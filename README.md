@@ -20,9 +20,13 @@ npm install
 npm start
 ```
 
-Open your local browser and verify the Paystack API is working by accessing:     
-`http://localhost/`   
-`http://localhost/status/`   
+#### 2)Open your local browser and verify the Paystack API is working by accessing: 
+
+```
+http://localhost/   
+http://localhost/status/
+
+```
 
 **Note**
 
