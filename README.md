@@ -22,8 +22,14 @@ npm start
 
 #### 2)Open your local browser and verify the Paystack API is working by accessing: 
 
+#Landin page
 ```
-http://localhost/   
+http://localhost/  
+
+```
+
+#HTTP Status
+```
 http://localhost/status/
 
 ```
@@ -34,16 +40,21 @@ Make sure you dont have another port ::80 running to avoid conflict issues.
 
 #### 3) Dependencies
 
-You will need to install MYSQL on the operating system you are using.Recommended is you can use MYSQL version 8
-Here is  the download link for your reference.You should follow the instructions on how install mysql-installer-web-community
-on their web page
-
-`https://dev.mysql.com/downloads/installer/`
-
-```
-mysql-installer-web-community-8*.ms
+##### MYSQL Installation
+You will need to install MYSQL on your operating system.Recommended,you can use MYSQL version 8.
+Here is the download link below for your reference.You should follow the instructions on how install mysql-installer-web-community-8*.ms
+on their web page.
 
 ```
+https://dev.mysql.com/downloads/installer/
+
+```
+##### Import DB Structure
+Import scheme usign MYSQL workbench wizard and make sure you got no errors.Download the below link to access data to import to your workbench
+
+
+
+
 
 
 
