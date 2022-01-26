@@ -22,7 +22,7 @@ app.run = async () => {
 
     const api = await require('./apis/index.js');
 
-    //app.use(api.authenticate);
+    app.use(api.authenticate);
     app.get('/', api.index);
     app.get('/status', api.status);
 
@@ -37,8 +37,8 @@ app.run = async () => {
     app.put('/cart/session/checkout/:sessionid', api.getCheckout);
     app.post('/cart/session/add', api.getAddCart);
 
-    app.listen(port, function (err) {
-
+    app.listen(port, async function (err) {
+   
 
         console.log(`Paystack api listening at http://localhost:${port}`)
         console.log('Process ' + process.pid + ' is listening to all incoming requests');

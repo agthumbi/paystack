@@ -1,4 +1,5 @@
 const logic = {}
+const CryptoJS = require('crypto-js')
 //error handler for all responses
 logic.response = (num, msg = '') => {
     const res = [
@@ -50,14 +51,59 @@ logic.validatePayload = (payload, field) => {
         return `${field} cannot be blank.Please enter a valid ${field}\n`;
     return ''
 }
-logic.validateSignature = async (headers) => {
-    const defaultResult = [logic.response(2, 'Authentication Failed.Invalid signature')]
+logic.ValidNonce = async (nonce) => {
+   
+    
+    const seq = require('./sequel')
+   
+
+
+
+    var arr = await seq.readStoredNonce();
+
+    arr = JSON.parse(arr)
+    if (arr.includes(nonce))
+        return false
+
+
+    let newArr = [...arr]
+    newArr.push(nonce)
+
+
+  
+    await seq.storeNonce(JSON.stringify(newArr))
+    return true
+
+
+
+
+}
+logic.ValidateStamp = (timestamp) => {
+   
+   
+    const systamp = logic.timestamp()
+    const timeWindow = Number(systamp) - Number(timestamp)
+    if (timeWindow >= 0 && timeWindow <= 5)
+        return true
+
+    return false
+
+
+
+}
+logic.validateSignature =  (headers) => {
     const { timestamp, nonce, signature } = headers
+  
+
+  
     const cipher = (timestamp) + '$$PAYSTACK$$' + (nonce)
-    const matchSignature = await getSignature(cipher)
+    console.log(cipher)
+    const matchSignature =  logic.getSignature(cipher)
+    console.log(signature)
+    console.log(matchSignature)
     if ((matchSignature) === (signature))
-        return null
-    return defaultResult
+        return true
+    return false
 };
 logic.getSignature = (text) => {
     var hash = CryptoJS.SHA256(text);
@@ -66,4 +112,17 @@ logic.getSignature = (text) => {
     hmac.update(hash, secret_uffer)
     return hash.toString(CryptoJS.enc.Base64);
 };
+logic.guid = () => {
+    function s4() {
+        return Math.floor((1 + Math.random()) * 0x10000)
+            .toString(16)
+            .substring(1);
+    }
+    return s4() + s4() + s4() + s4() +
+        s4() + s4() + s4() + s4();
+}
+
+logic.timestamp = () => {
+    return Date.now() / 1000 | 0;
+}
 module.exports = logic
