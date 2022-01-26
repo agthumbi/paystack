@@ -1,4 +1,4 @@
-# Pay Stack Rest API-BE Coding Challenge
+### Pay Stack Rest API-BE Coding Challenge
 A paystack api for small shopping cart application.Lets Assume that you have a
 list of products in a category (eg. food or clothing) which contain a set of
 standard attributes (sku, selling price, stock level, expiration date etc.) which a
@@ -9,8 +9,8 @@ user can add to, remove from and edit inside a car.
 
 ## PART I: Download & Build on local
 
-## Method 1: From github
-### 1) Clone the repository, install node packages  and verify routes locally
+# Method 1: From github
+# 1) Clone the repository, install node packages  and verify routes locally
 
 ``` 
 //on local
