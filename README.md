@@ -66,7 +66,7 @@ Import scheme usign MYSQL workbench wizard and make sure you got no errors.Downl
 - Restful error handling
 - Security Authentication
     
-#### Consumer using postman
+#### Consumer using Postman
 
 Download the postman enviroment via the link below.
 
@@ -118,7 +118,19 @@ The pseudo-code below shows how this can be done with any programming language o
 ` String signature=Base64(Hash(rawCipher,Secret_Buffer)) `
 
 
+### Welcome Page
 
+This endpoint is for accessing the landing page
+
+```
+#### GET http://{{host}}/
+
+``
+
+```
+Welcome to PayStack api
+
+``
 
 
 
