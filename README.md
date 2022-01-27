@@ -1,3 +1,5 @@
+https://media.premiumtimesng.com/wp-content/files/2020/10/paystack-opengraph.png
+
 # Pay Stack Rest API-BE Coding Challenge
 A paystack api for small shopping cart application.Lets Assume that you have a
 list of products in a category (eg. food or clothing) which contain a set of
