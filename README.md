@@ -51,6 +51,8 @@ https://dev.mysql.com/downloads/installer/
 ##### Import DB Structure
 Import scheme usign MYSQL workbench wizard and make sure you got no errors.Download the below link to access data to import to your workbench
 
+[a link] (https://github.com/agthumbi/paystack/tree/main/paystack_db_structure)
+
 
 ## PART II : Consume APIs
 
