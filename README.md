@@ -174,7 +174,7 @@ This endpoint is for accessing the product listing depending on the criteria
 
 ##### Expected Request 
 
-` GET http://{{host}}/products/categoryid/fetch/{{category id}}`
+` GET http://{{host}}/products/categoryid/fetch/{category id}`
 
 ##### Excpected Response 
 
@@ -214,7 +214,7 @@ This endpoint is for accessing the product listing depending on the criteria
 
 ##### Expected Request 
 
-` GET http://{{host}}/products/productid/fetch/{{product_id}}`
+` GET http://{{host}}/products/productid/fetch/{product_id}`
 
 ##### Excpected Response 
 
@@ -244,7 +244,7 @@ This endpoint is for accessing the product listing depending on the criteria
 
 You can manage the cart using the following endpoints
 - Add
-- Update
+- Edit/Update
 - Remove
 - View
 - Checkout
@@ -260,7 +260,7 @@ This endpoint is used to add items/products in the cart
    ` "productid": 1,
    ` "isGuest": true,
    ` "session_id": "223567",
-   ` "p_qty": 1
+   ` "qty": 1
 ` }
 
 ##### Excpected Response 
@@ -279,7 +279,141 @@ This endpoint is used to add items/products in the cart
         "code": "E0",
         "message": "Product quantity(s) cannot be less than an item"
     }
-`]
+` ]
+
+##### Excpected Response for product that does not exists in store 
+
+` [
+    {
+        "code": "E0",
+        "message": "Product does not exist(s)"
+    }
+` ]
+
+##### Excpected Response for product that is out of stock 
+
+` [
+    {
+        "code": "E0",
+        "message": "Out of Stock"
+    }
+` ]
+
+##### Excpected Response for product that is already added
+
+` [
+    {
+        "code": "E0",
+        "message": "Product already added"
+    }
+` ]
+
+#### Edit/Update Cart
+
+This endpoint is used to edit an item/product already in the cart.For the item that its added by customer who wants to add more quantity,
+he will initiate this call
+
+##### Expected Request 
+
+` PUT http://{{host}}/cart/session/update`
+` {
+   ` "productid": 1,
+   ` "isGuest": true,
+   ` "session_id": "223567",
+   ` "qty": 1
+` }
+
+##### Excpected Response 
+
+` [
+    {
+        "code": 0,
+        "message": "Updated Successfully"
+    }
+` ]
+
+#### View
+
+This endpoint is used to view the the items in the cart
+
+##### Expected Request 
+
+` GET http://{{host}}/cart/session/fetch/{session_id}`
 
 
+##### Excpected Response 
 
+` [
+    {
+        "sku": "100TS1",
+        "product": "shirt",
+        "amount": 10,
+        "isGuest": 1,
+        "qty": 3,
+        "paid": "no"
+    }
+` ]
+
+##### Excpected Response for non-existing cart
+
+` [
+    {
+        "code": "E2",
+        "message": "No Record(s) Exists"
+    }
+` ]
+
+#### Remove Whole Cart
+
+This endpoint is used to remove all items in the cart
+
+##### Expected Request 
+
+` PUT http://{{host}}/cart/session/fetch/{session_id}`
+
+
+##### Excpected Response 
+
+` [
+    {
+        "code": 0,
+        "message": "Deleted the cart successfully"
+    }
+` ]
+
+##### Excpected Response for deleting non-existing cart
+
+` [
+    {
+        "code": "E2",
+        "message": "No Record(s) Exists"
+    }
+` ]
+
+
+#### Remove an item in the Cart
+
+This endpoint is used to remove an item in the cart
+
+##### Expected Request 
+
+` PUT http://{{host}}/cart/session/fetch/{session_id}/{product_id}`
+
+
+##### Excpected Response 
+
+` [
+    {
+        "code": 0,
+        "message": "Deleted an item in cart successfully"
+    }
+` ]
+
+##### Excpected Response for deleting non-existing item in the cart
+
+` [
+    {
+        "code": "E2",
+        "message": "No Record(s) Exists"
+    }
+` ]
