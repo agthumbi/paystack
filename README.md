@@ -90,7 +90,7 @@ All fields are required except otherwise stated.
 The following describes the important headers required to be sent.
 
 Headers        | Description 
----------------------------------------------------------------------------------------------------------
+---------------|--------------------------------------------------------------------------------------------
 Timestamp      | Requst timestamp in epoch (unix).It must be in seconds and NOT miliseconds e.g 1643208739
 
 Nonce          | A unique generated valuue for each request.It should not be repeated.
