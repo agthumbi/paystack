@@ -117,6 +117,15 @@ The pseudo-code below shows how this can be done with any programming language o
 
 ` String signature=Base64(Hash(rawCipher,Secret_Buffer)) `
 
+The expected response if compututation is wrong pr not supplied is as follows:
+
+` [
+    {
+        "code": "E0",
+        "message": "Authentication Failed.Invalid signature"
+    }
+` ]
+
 
 ### Welcome Page
 
