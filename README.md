@@ -409,7 +409,43 @@ This endpoint is used to remove an item in the cart
     }
 ` ]
 
-##### Excpected Response for deleting non-existing item in the cart
+##### Excpected Response for deleting non-existing item in a cart
+
+` [
+    {
+        "code": "E2",
+        "message": "No Record(s) Exists"
+    }
+` ]
+
+#### Checkout Cart
+
+This endpoint is used to checkout cart.
+
+##### Expected Request 
+
+` PUT http://{{host}}/cart/session/checkout/{session_id}`
+
+
+##### Excpected Response 
+
+` [
+    {
+        "code": 0,
+        "message": "Checked out Successfully"
+    }
+` ]
+
+##### Excpected Response for existing checkout cart
+
+` [
+    {
+        "code": "E0",
+        "message": "Already Checked out"
+    }
+` ]
+
+##### Excpected Response for non-existing checkout cart
 
 ` [
     {
