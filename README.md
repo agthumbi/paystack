@@ -61,9 +61,10 @@ Import scheme usign MYSQL workbench wizard and make sure you got no errors.Downl
 ## PART II : Consume APIs
 
 ### Features
-    -Restful routings
-    -Restful error handling
-    -Security Authentication
+    - Restful routings
+    - Restful error handling
+    - Security Authentication
+    
 
 Download the postman enviroment via the link below.
 
