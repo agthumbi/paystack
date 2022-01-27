@@ -122,16 +122,43 @@ The pseudo-code below shows how this can be done with any programming language o
 
 This endpoint is for accessing the landing page
 
-```
-#### GET http://{{host}}/
+#### Expected Request 
+` GET http://{{host}}/ `
+
+#### Excpected Response 
+`Welcome to PayStack api `
+
+### Status Check
+
+#### Expected Request 
+` GET http://{{host}}/status `
+
+#### Excpected Response 
+`0`
+
+### Category Listing
+
+This endpoint is for accessing the category listing
+
+#### Expected Request 
+
+` GET http://{{host}}catgories/fetch `
+
+#### Excpected Response 
 
 ``
-
-```
-Welcome to PayStack api
+[
+    {
+        "id": 1,
+        "name": "Clothes"
+    },
+    {
+        "id": 2,
+        "name": "Furniture"
+    }
+]
 
 ``
-
 
 
 
