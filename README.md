@@ -98,23 +98,20 @@ Content-Type   | The MIME type of the body of the request e.g. application/json
 
 #### Sample Authentication Headers
 
-`
-Content-Type:application/json
-Timestamp:1643208739
-Nonce:39640f06aeb78ac46eb0a0b3e1045fe8
-Signature:cbzXGpglR43i6aZYFgrjJFc6TNGXsOzGdG+JY5lJpXo=
+` Content-Type:application/json `
+` Timestamp:1643208739 `
+` Nonce:39640f06aeb78ac46eb0a0b3e1045fe8 `
+` Signature:cbzXGpglR43i6aZYFgrjJFc6TNGXsOzGdG+JY5lJpXo= ` 
 
-`
+
 ##### Signature Computation
 
 The pseudo-code below shows how this can be done with any programming language of choice
 
-`
-String rawCipher=timestamp + '$$PAYSTACK$$' + nonce
-String Secret_Buffer='Paystack is de best'
-String signature=Base64(Hash(rawCipher,Secret_Buffer))
+` String rawCipher=timestamp + '$$PAYSTACK$$' + nonce `
+` String Secret_Buffer='Paystack is de best' `
+` String signature=Base64(Hash(rawCipher,Secret_Buffer)) `
 
-`
 
 
 
