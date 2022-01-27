@@ -157,6 +157,15 @@ This endpoint is for accessing the category listing
     }
 ]`
 
+#### Expected  Response for non-existing category
+
+` [
+    {
+        "code": "E2",
+        "message": "No Record(s) Exists"
+    }
+] `
+
 ### Product Listing
 
 This endpoint is for accessing the product listing depending on the criteria
@@ -192,6 +201,15 @@ This endpoint is for accessing the product listing depending on the criteria
     }
 ] `
 
+#### Expected  Response for non-existing category
+
+` [
+    {
+        "code": "E2",
+        "message": "No Record(s) Exists"
+    }
+] `
+
 #### By Product ID
 
 ##### Expected Request 
@@ -209,5 +227,14 @@ This endpoint is for accessing the product listing depending on the criteria
         "expiration_date": "-",
         "amount": 12,
         "created_date": "2022-01-18T14:17:48.000Z"
+    }
+] `
+
+#### Expected  Response for non-existing product
+
+` [
+    {
+        "code": "E2",
+        "message": "No Record(s) Exists"
     }
 ] `
