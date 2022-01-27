@@ -560,3 +560,12 @@ host            | Base URL
         "message": "No Record(s) Exists"
     }
 ` ]
+
+### Reponse Codes
+
+Code            | Description Message 
+:---------------|:------------------------------------------------------------------------------------------
+0               | Success
+E1              | Internal service error.It could timeout with the network/database level
+E2              | Data not found or does not exists from the records
+E0              | General errors 
