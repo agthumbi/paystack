@@ -142,7 +142,7 @@ This endpoint is for accessing the category listing
 
 #### Expected Request 
 
-` GET http://{{host}}catgories/fetch `
+` GET http://{{host}}/catgories/fetch `
 
 #### Excpected Response 
 
@@ -174,7 +174,7 @@ This endpoint is for accessing the product listing depending on the criteria
 
 ##### Expected Request 
 
-` GET http://{{host}}products/categoryid/fetch/{{category id}}`
+` GET http://{{host}}/products/categoryid/fetch/{{category id}}`
 
 ##### Excpected Response 
 
@@ -214,7 +214,7 @@ This endpoint is for accessing the product listing depending on the criteria
 
 ##### Expected Request 
 
-` GET http://{{host}}products/productid/fetch/{{product_id}}`
+` GET http://{{host}}/products/productid/fetch/{{product_id}}`
 
 ##### Excpected Response 
 
@@ -238,3 +238,39 @@ This endpoint is for accessing the product listing depending on the criteria
         "message": "No Record(s) Exists"
     }
 ] `
+
+
+### Cart
+
+You can manage the cart using the following endpoints
+- Add
+- Update
+- Remove
+- View
+- Checkout
+
+#### Add Cart
+
+This endpoint is used to add items/products in the cart
+
+##### Expected Request 
+
+` POST http://{{host}}/cart/session/add`
+` {
+   ` "productid": 1,
+   ` "isGuest": true,
+   ` "session_id": "223567",
+   ` "p_qty": 1
+` }
+
+##### Excpected Response 
+
+` [
+    ` {
+       ` "code": 0,
+       ` "message": "Added Successfully"
+    ` }
+` ]
+
+
+
