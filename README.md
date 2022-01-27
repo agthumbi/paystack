@@ -157,5 +157,57 @@ This endpoint is for accessing the category listing
     }
 ]`
 
+### Product Listing
 
+This endpoint is for accessing the product listing depending on the criteria
 
+#### By Category ID
+
+##### Expected Request 
+
+` GET http://{{host}}products/categoryid/fetch/{{category id}}`
+
+##### Excpected Response 
+
+` [
+    {
+        "id": 1,
+        "name": "shirt",
+        "category": "Clothes",
+        "stock_level": 10,
+        "image_path": "/cat_1/shirts.png",
+        "expiration_date": "-",
+        "amount": 10,
+        "created_date": "2022-01-13T08:04:23.000Z"
+    },
+    {
+        "id": 2,
+        "name": "jeans",
+        "category": "Clothes",
+        "stock_level": 12,
+        "image_path": "/cat_1/jeans.png",
+        "expiration_date": "-",
+        "amount": 12,
+        "created_date": "2022-01-18T14:17:48.000Z"
+    }
+] `
+
+#### By Product ID
+
+##### Expected Request 
+
+` GET http://{{host}}products/productid/fetch/{{product_id}}`
+
+##### Excpected Response 
+
+` [
+    {
+        "id": 2,
+        "name": "jeans",
+        "category": "Clothes",
+        "image_path": "/cat_1/jeans.png",
+        "expiration_date": "-",
+        "amount": 12,
+        "created_date": "2022-01-18T14:17:48.000Z"
+    }
+] `
