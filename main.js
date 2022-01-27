@@ -33,6 +33,8 @@ app.run = async () => {
 
     app.get('/cart/session/fetch/:sessionid', api.getViewCart);
     app.put('/cart/session/remove/:sessionid', api.getRemoveCart);
+    app.put('/cart/session/remove/item/:sessionid/:productid', api.getRemoveItemCart);
+    
     app.put('/cart/session/update', api.getEditCart);
     app.put('/cart/session/checkout/:sessionid', api.getCheckout);
     app.post('/cart/session/add', api.getAddCart);

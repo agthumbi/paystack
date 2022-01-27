@@ -1,5 +1,5 @@
 const logic = require('../config/logic')
-
+const mysql = require('mysql2')
 var api = {}
 
 var response = {}
@@ -18,7 +18,7 @@ api.getProductsByCategoryID = async (req, res) => {
     let notifications = '';
     for (let field of payload) {
         notifications += logic.validatePayload(req.params, field)
-        request = request.replace(field, req.params[field])
+        request = request.replace(field, mysql.escape(req.params[field]))
     }
     if (notifications != '')
         return res.send([logic.response(2, notifications)])
@@ -38,7 +38,7 @@ api.getProductByProductID = async (req, res) => {
     let notifications = '';
     for (let field of payload) {
         notifications += logic.validatePayload(req.params, field)
-        request = request.replace(field, req.params[field])
+        request = request.replace(field, mysql.escape(req.params[field]))
     }
     if (notifications != '')
         return res.send([logic.response(2, notifications)])

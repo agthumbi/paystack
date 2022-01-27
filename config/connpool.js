@@ -6,36 +6,27 @@ var connect = {}
 
 
 
- connect.pool=     mysql.createPool(db)
-//connect.pool = new sql.ConnectionPool(db)
+connect.pool = mysql.createPool(db)
 
-connect.poolConnect =connect.pool.getConnection(err => {
+//get connection
+connect.poolConnect = connect.pool.getConnection(err => {
     connect.handleConPool(err)
 
 })
-// connect.poolConnect = connect.pool.connect().catch(err => {
-//     connect.handleConPool(err)
-
-// })
-// connect.recon = () => {
-//     connect.poolConnect = connect.pool.connect().catch(err => {
-//         connect.handleConPool(err)
-
-//     })
-// };
-
+//Reconnect the pool incase of timeout or error
 connect.recon = () => {
     connect.poolConnect = connect.pool.getConnection(err => {
         connect.handleConPool(err)
 
     })
 };
+//Managing the connection pool
 connect.handleConPool = (err = null) => {
     var validate = {}
     validate['code'] = 1
-    // console.log('_acquiringConnections', connection._) // number of connections in the process of being acquired)
+
     if (err) {
-        console.log('Lets see error'+ err)
+        console.log('Lets see error' + err)
         if (err.code === 'PROTOCOL_ENQUEUE_AFTER_FATAL_ERROR') {
             console.error('Db Query fatal error');
             validate['message'] = 'Db Query fatal error.Please try again'
@@ -62,7 +53,7 @@ connect.handleConPool = (err = null) => {
             console.error('Connection to DB was reset')
             validate['message'] = 'Connection to DB was reset.Please try again'
         }
-        
+
 
     }
 
