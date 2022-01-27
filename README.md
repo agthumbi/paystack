@@ -1,4 +1,4 @@
-![Paystack](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSB2O9bKAKgYaB1P97WmQ0DyeW8Tch-RWaKRA&usqp=CAU)
+![Paystack](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTd03xty-NhpM7DTTWLzJHM-1Y_n2Ffmq58OA&usqp=CAU)
 
 # Pay Stack Rest API-BE Coding Challenge
 A paystack api for small shopping cart application.Lets Assume that you have a
@@ -54,7 +54,7 @@ https://dev.mysql.com/downloads/installer/
 Import scheme usign MYSQL workbench wizard and make sure you got no errors.Download the below link to access data to import to your workbench
 
 
- [![Paystack DB structure](https://github.com/agthumbi/paystack/tree/main/paystack_db_structure)
+ ![Paystack DB structure](https://github.com/agthumbi/paystack/tree/main/paystack_db_structure)
 
 
 
