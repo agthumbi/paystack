@@ -146,8 +146,7 @@ This endpoint is for accessing the category listing
 
 #### Excpected Response 
 
-``
-[
+`[
     {
         "id": 1,
         "name": "Clothes"
@@ -156,9 +155,7 @@ This endpoint is for accessing the category listing
         "id": 2,
         "name": "Furniture"
     }
-]
-
-``
+]`
 
 
 
