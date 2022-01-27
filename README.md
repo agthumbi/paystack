@@ -52,7 +52,7 @@ https://dev.mysql.com/downloads/installer/
 Import scheme usign MYSQL workbench wizard and make sure you got no errors.Download the below link to access data to import to your workbench
 
 
-` [Paystack DB structure] (https://github.com/agthumbi/paystack/tree/main/paystack_db_structure) `
+**** [Paystack DB structure] (https://github.com/agthumbi/paystack/tree/main/paystack_db_structure) ****
 
 
 
