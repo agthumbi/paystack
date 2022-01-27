@@ -176,7 +176,7 @@ This endpoint is for accessing the product listing depending on the criteria
 
 ` GET http://{{host}}/products/categoryid/fetch/{category_id}`
 
-Paramete        | Description 
+Parameter       | Description 
 :---------------|:------------------------------------------------------------------------------------------
 category_id     | Category Identifier of category listing               
 
@@ -221,7 +221,7 @@ category_id     | Category Identifier of category listing
 
 ` GET http://{{host}}/products/productid/fetch/{product_id}`
 
-Paramete        | Description 
+Parameter       | Description 
 :---------------|:------------------------------------------------------------------------------------------
 product_id      | Product Identifier of product listing            
 
@@ -261,14 +261,15 @@ You can manage the cart using the following endpoints
 #### Add Cart
 
 This endpoint is used to add items/products in the cart
-Paramete        | Description 
+
+##### Expected Request 
+
+Parameter       | Description 
 :---------------|:------------------------------------------------------------------------------------------
 product_id      | Product Identifier of product listing   
 isGuest         | If the session of the adding the cart is guest or not i.e true or false 
-session_id      | Session ifentifier of cart owner.SAme way as identifying the user session  
+session_id      | Session ifentifier of cart owner.Same way as identifying the user session  
 qty             | Quantity of the item you want to add 
-
-##### Expected Request 
 
 ` POST http://{{host}}/cart/session/add`
 ` {
@@ -330,6 +331,14 @@ he will initiate this call
 
 ##### Expected Request 
 
+Parameter       | Description 
+:---------------|:------------------------------------------------------------------------------------------
+product_id      | Product Identifier of product listing   
+isGuest         | If the session of the adding the cart is guest or not i.e true or false 
+session_id      | Session ifentifier of cart owner.Same way as identifying the user session  
+qty             | Quantity of the item you want to add 
+
+
 ` PUT http://{{host}}/cart/session/update`
 ` {
    ` "productid": 1,
@@ -352,6 +361,11 @@ he will initiate this call
 This endpoint is used to view the the items in the cart
 
 ##### Expected Request 
+
+Parameter       | Description 
+:---------------|:------------------------------------------------------------------------------------------
+session_id      | Session ifentifier of cart owner.Same way as identifying the user session  
+
 
 ` GET http://{{host}}/cart/session/fetch/{session_id}`
 
@@ -384,6 +398,11 @@ This endpoint is used to remove all items in the cart
 
 ##### Expected Request 
 
+Parameter       | Description 
+:---------------|:------------------------------------------------------------------------------------------
+session_id      | Session ifentifier of cart owner.Same way as identifying the user session  
+
+
 ` PUT http://{{host}}/cart/session/fetch/{session_id}`
 
 
@@ -412,6 +431,12 @@ This endpoint is used to remove an item in the cart
 
 ##### Expected Request 
 
+Parameter       | Description 
+:---------------|:------------------------------------------------------------------------------------------
+product_id      | Product Identifier of product listing   
+session_id      | Session ifentifier of cart owner.Same way as identifying the user session  
+
+
 ` PUT http://{{host}}/cart/session/fetch/{session_id}/{product_id}`
 
 
@@ -438,6 +463,10 @@ This endpoint is used to remove an item in the cart
 This endpoint is used to checkout cart.
 
 ##### Expected Request 
+
+Parameter       | Description 
+:---------------|:------------------------------------------------------------------------------------------
+session_id      | Session ifentifier of cart owner.Same way as identifying the user session  
 
 ` PUT http://{{host}}/cart/session/checkout/{session_id}`
 
