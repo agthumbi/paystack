@@ -176,9 +176,11 @@ This endpoint is for accessing the product listing depending on the criteria
 
 ` GET http://{{host}}/products/categoryid/fetch/{category_id}`
 
+
 Parameter       | Description 
 :---------------|:------------------------------------------------------------------------------------------
-category_id     | Category Identifier of category listing               
+category_id     | Category Identifier of category listing
+host            | Base URL
 
 
 ##### Excpected Response 
@@ -221,9 +223,11 @@ category_id     | Category Identifier of category listing
 
 ` GET http://{{host}}/products/productid/fetch/{product_id}`
 
+
 Parameter       | Description 
 :---------------|:------------------------------------------------------------------------------------------
-product_id      | Product Identifier of product listing            
+product_id      | Product Identifier of product listing   
+host            | Base URL
 
 ##### Excpected Response 
 
@@ -264,14 +268,17 @@ This endpoint is used to add items/products in the cart
 
 ##### Expected Request 
 
+` POST http://{{host}}/cart/session/add`
+
 Parameter       | Description 
 :---------------|:------------------------------------------------------------------------------------------
 product_id      | Product Identifier of product listing   
 isGuest         | If the session of the adding the cart is guest or not i.e true or false 
 session_id      | Session ifentifier of cart owner.Same way as identifying the user session  
 qty             | Quantity of the item you want to add 
+host            | Base URL
 
-` POST http://{{host}}/cart/session/add`
+
 ` {
    ` "productid": 1,
    ` "isGuest": true,
@@ -331,15 +338,16 @@ he will initiate this call
 
 ##### Expected Request 
 
+` PUT http://{{host}}/cart/session/update`
+
 Parameter       | Description 
 :---------------|:------------------------------------------------------------------------------------------
 product_id      | Product Identifier of product listing   
 isGuest         | If the session of the adding the cart is guest or not i.e true or false 
 session_id      | Session ifentifier of cart owner.Same way as identifying the user session  
 qty             | Quantity of the item you want to add 
+host            | Base URL
 
-
-` PUT http://{{host}}/cart/session/update`
 ` {
    ` "productid": 1,
    ` "isGuest": true,
@@ -362,12 +370,14 @@ This endpoint is used to view the the items in the cart
 
 ##### Expected Request 
 
+` GET http://{{host}}/cart/session/fetch/{session_id}`
+
+
 Parameter       | Description 
 :---------------|:------------------------------------------------------------------------------------------
 session_id      | Session ifentifier of cart owner.Same way as identifying the user session  
+host            | Base URL
 
-
-` GET http://{{host}}/cart/session/fetch/{session_id}`
 
 
 ##### Excpected Response 
@@ -398,12 +408,13 @@ This endpoint is used to remove all items in the cart
 
 ##### Expected Request 
 
+` PUT http://{{host}}/cart/session/fetch/{session_id}`
+
+
 Parameter       | Description 
 :---------------|:------------------------------------------------------------------------------------------
 session_id      | Session ifentifier of cart owner.Same way as identifying the user session  
-
-
-` PUT http://{{host}}/cart/session/fetch/{session_id}`
+host            | Base URL
 
 
 ##### Excpected Response 
@@ -431,13 +442,14 @@ This endpoint is used to remove an item in the cart
 
 ##### Expected Request 
 
+` PUT http://{{host}}/cart/session/fetch/{session_id}/{product_id}`
+
+
 Parameter       | Description 
 :---------------|:------------------------------------------------------------------------------------------
 product_id      | Product Identifier of product listing   
 session_id      | Session ifentifier of cart owner.Same way as identifying the user session  
-
-
-` PUT http://{{host}}/cart/session/fetch/{session_id}/{product_id}`
+host            | Base URL
 
 
 ##### Excpected Response 
@@ -464,11 +476,13 @@ This endpoint is used to checkout cart.
 
 ##### Expected Request 
 
+` PUT http://{{host}}/cart/session/checkout/{session_id}`
+
+
 Parameter       | Description 
 :---------------|:------------------------------------------------------------------------------------------
 session_id      | Session ifentifier of cart owner.Same way as identifying the user session  
-
-` PUT http://{{host}}/cart/session/checkout/{session_id}`
+host            | Base URL
 
 
 ##### Excpected Response 
