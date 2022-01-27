@@ -278,7 +278,8 @@ session_id      | Session ifentifier of cart owner.Same way as identifying the u
 qty             | Quantity of the item you want to add 
 host            | Base URL
 
-
+Payload
+---------------------------
 ` {
    ` "productid": 1,
    ` "isGuest": true,
@@ -348,6 +349,8 @@ session_id      | Session ifentifier of cart owner.Same way as identifying the u
 qty             | Quantity of the item you want to add 
 host            | Base URL
 
+Payload
+---------------------------
 ` {
    ` "productid": 1,
    ` "isGuest": true,
@@ -416,6 +419,9 @@ Parameter       | Description
 session_id      | Session ifentifier of cart owner.Same way as identifying the user session  
 host            | Base URL
 
+Payload
+---------------------------
+-
 
 ##### Excpected Response 
 
@@ -451,6 +457,9 @@ product_id      | Product Identifier of product listing
 session_id      | Session ifentifier of cart owner.Same way as identifying the user session  
 host            | Base URL
 
+Payload
+---------------------------
+-
 
 ##### Excpected Response 
 
@@ -484,6 +493,9 @@ Parameter       | Description
 session_id      | Session ifentifier of cart owner.Same way as identifying the user session  
 host            | Base URL
 
+Payload
+---------------------------
+-
 
 ##### Excpected Response 
 
