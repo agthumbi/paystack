@@ -272,5 +272,14 @@ This endpoint is used to add items/products in the cart
     ` }
 ` ]
 
+##### Excpected Response for product count is zero 
+
+` [
+    {
+        "code": "E0",
+        "message": "Product quantity(s) cannot be less than an item"
+    }
+`]
+
 
 
