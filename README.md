@@ -61,23 +61,42 @@ Import scheme usign MYSQL workbench wizard and make sure you got no errors.Downl
 ## PART II : Consume APIs
 
 ### Feature
+
 - Restful routings
 - Restful error handling
 - Security Authentication
     
+#### Consumer using postman
 
 Download the postman enviroment via the link below.
 
-Click on the button below to access the API samples.
+Click on the button below to access the API snippets.
 
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/25d69b6291f65c89e675)
 
 
-- Bullet list
-              - Nested bullet
-                  - Sub-nested bullet etc
-          - Bullet list item 2 
+### Authentication
 
+In order to do authentication you will be required to send the following HTTP headers parameters as part of your requests:
+
+- Timestamp
+- Nonce
+- Signature
+
+All fields are required except otherwise stated.
+
+#### HTTP Headers for Authentication
+
+The following describes the important headers required to be sent.
+
+Headers        | Description 
+---------------------------------------------------------------------------------------------------------
+Timestamp      | Requst timestamp in epoch (unix).It must be in seconds and NOT miliseconds e.g 1643208739
+
+Nonce          | A unique generated valuue for each request.It should not be repeated.
+
+Signature      | Must be represented in base 64.The signature is calculated from a combination defined data
+               | elements seperated by the special symbols.See pre-scripts on postman snippets
 
 
 
