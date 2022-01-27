@@ -131,7 +131,7 @@ Parameter       | Description
 host            | Base URL
 
 ##### Payload
-      `None
+      ` None
 
 
 
@@ -150,7 +150,7 @@ Parameter       | Description
 host            | Base URL
 
 ##### Payload
-      `None
+      ` None
 
 
 #### Excpected Response 
@@ -171,7 +171,7 @@ host            | Base URL
 
 
 ##### Payload
-      `None
+      ` None
 
 #### Excpected Response 
 
@@ -212,7 +212,7 @@ category_id     | Category Identifier of category listing
 host            | Base URL
 
 ##### Payload
-      `None
+      ` None
 
 ##### Excpected Response 
 
@@ -260,8 +260,9 @@ Parameter       | Description
 product_id      | Product Identifier of product listing   
 host            | Base URL
 
+
 ##### Payload
-`None
+      ` None
 
 ##### Excpected Response 
 
@@ -312,8 +313,8 @@ session_id      | Session ifentifier of cart owner.Same way as identifying the u
 qty             | Quantity of the item you want to add 
 host            | Base URL
 
-Payload
----------------------------
+
+##### Payload
 ` {
    ` "productid": 1,
    ` "isGuest": true,
@@ -414,8 +415,9 @@ Parameter       | Description
 session_id      | Session ifentifier of cart owner.Same way as identifying the user session  
 host            | Base URL
 
+
 ##### Payload
-      `None
+      ` None
 
 
 ##### Excpected Response 
@@ -454,8 +456,9 @@ Parameter       | Description
 session_id      | Session ifentifier of cart owner.Same way as identifying the user session  
 host            | Base URL
 
+
 ##### Payload
-      `None
+      ` None
 
 ##### Excpected Response 
 
@@ -491,8 +494,9 @@ product_id      | Product Identifier of product listing
 session_id      | Session ifentifier of cart owner.Same way as identifying the user session  
 host            | Base URL
 
+
 ##### Payload
-      `None
+      ` None
 
 ##### Excpected Response 
 
@@ -526,8 +530,9 @@ Parameter       | Description
 session_id      | Session ifentifier of cart owner.Same way as identifying the user session  
 host            | Base URL
 
+
 ##### Payload
-      `None
+      ` None
 
 ##### Excpected Response 
 
