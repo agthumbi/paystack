@@ -4,8 +4,8 @@
   "description": "BE Coding Challenge",
   "main": "index.js",
   "scripts": {
-    "test": "jest --watchAll",
-    "start": "node index.js --watchAll"
+    "test": "jest",
+    "start": "node index.js"
   },
   "author": "Thumbi Antony",
   "license": "ISC",
