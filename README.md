@@ -93,8 +93,7 @@ Headers        | Description
 :-------------:|:------------------------------------------------------------------------------------------:
 Timestamp      | Requst timestamp in epoch (unix).It must be in seconds and NOT miliseconds e.g 1643208739               
 Nonce          | A unique generated valuue for each request.It should not be repeated.               
-Signature      | Must be represented in base 64.The signature is calculated from a combination defined data
-                 elements seperated by the special symbols.See pre-scripts on postman snippets               
+Signature      | The signature is calculated from a combination defined data elements seperated by the special symbols.See pre-scripts on postman snippets               
 Content-Type   | The MIME type of the body of the request e.g. application/json  
                  
 
