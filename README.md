@@ -174,7 +174,12 @@ This endpoint is for accessing the product listing depending on the criteria
 
 ##### Expected Request 
 
-` GET http://{{host}}/products/categoryid/fetch/{category id}`
+` GET http://{{host}}/products/categoryid/fetch/{category_id}`
+
+Paramete        | Description 
+:---------------|:------------------------------------------------------------------------------------------
+category_id     | Category Identifier of category listing               
+
 
 ##### Excpected Response 
 
@@ -216,6 +221,10 @@ This endpoint is for accessing the product listing depending on the criteria
 
 ` GET http://{{host}}/products/productid/fetch/{product_id}`
 
+Paramete        | Description 
+:---------------|:------------------------------------------------------------------------------------------
+product_id      | Product Identifier of product listing            
+
 ##### Excpected Response 
 
 ` [
@@ -252,6 +261,12 @@ You can manage the cart using the following endpoints
 #### Add Cart
 
 This endpoint is used to add items/products in the cart
+Paramete        | Description 
+:---------------|:------------------------------------------------------------------------------------------
+product_id      | Product Identifier of product listing   
+isGuest         | If the session of the adding the cart is guest or not i.e true or false 
+session_id      | Session ifentifier of cart owner.SAme way as identifying the user session  
+qty             | Quantity of the item you want to add 
 
 ##### Expected Request 
 
