@@ -123,17 +123,38 @@ The pseudo-code below shows how this can be done with any programming language o
 This endpoint is for accessing the landing page
 
 #### Expected Request 
+
 ` GET http://{{host}}/ `
 
+Parameter       | Description 
+:---------------|:------------------------------------------------------------------------------------------
+host            | Base URL
+
+##### Payload
+      `None
+
+
+
 #### Excpected Response 
+
 `Welcome to PayStack api `
 
 ### Status Check
 
 #### Expected Request 
+
 ` GET http://{{host}}/status `
 
+Parameter       | Description 
+:---------------|:------------------------------------------------------------------------------------------
+host            | Base URL
+
+##### Payload
+      `None
+
+
 #### Excpected Response 
+
 `0`
 
 ### Category Listing
@@ -143,6 +164,14 @@ This endpoint is for accessing the category listing
 #### Expected Request 
 
 ` GET http://{{host}}/catgories/fetch `
+
+Parameter       | Description 
+:---------------|:------------------------------------------------------------------------------------------
+host            | Base URL
+
+
+##### Payload
+      `None
 
 #### Excpected Response 
 
@@ -182,6 +211,8 @@ Parameter       | Description
 category_id     | Category Identifier of category listing
 host            | Base URL
 
+##### Payload
+      `None
 
 ##### Excpected Response 
 
@@ -228,6 +259,9 @@ Parameter       | Description
 :---------------|:------------------------------------------------------------------------------------------
 product_id      | Product Identifier of product listing   
 host            | Base URL
+
+##### Payload
+`None
 
 ##### Excpected Response 
 
@@ -349,8 +383,7 @@ session_id      | Session ifentifier of cart owner.Same way as identifying the u
 qty             | Quantity of the item you want to add 
 host            | Base URL
 
-Payload
----------------------------
+##### Payload
 ` {
    ` "productid": 1,
    ` "isGuest": true,
@@ -381,6 +414,8 @@ Parameter       | Description
 session_id      | Session ifentifier of cart owner.Same way as identifying the user session  
 host            | Base URL
 
+##### Payload
+      `None
 
 
 ##### Excpected Response 
@@ -419,9 +454,8 @@ Parameter       | Description
 session_id      | Session ifentifier of cart owner.Same way as identifying the user session  
 host            | Base URL
 
-Payload
----------------------------
--
+##### Payload
+      `None
 
 ##### Excpected Response 
 
@@ -457,9 +491,8 @@ product_id      | Product Identifier of product listing
 session_id      | Session ifentifier of cart owner.Same way as identifying the user session  
 host            | Base URL
 
-Payload
----------------------------
--
+##### Payload
+      `None
 
 ##### Excpected Response 
 
@@ -493,9 +526,8 @@ Parameter       | Description
 session_id      | Session ifentifier of cart owner.Same way as identifying the user session  
 host            | Base URL
 
-Payload
----------------------------
--
+##### Payload
+      `None
 
 ##### Excpected Response 
 
