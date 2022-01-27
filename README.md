@@ -1,4 +1,4 @@
-[![Paystack](https://media.premiumtimesng.com/wp-content/files/2020/10/paystack-opengraph.png)
+![Paystack](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSB2O9bKAKgYaB1P97WmQ0DyeW8Tch-RWaKRA&usqp=CAU)
 
 # Pay Stack Rest API-BE Coding Challenge
 A paystack api for small shopping cart application.Lets Assume that you have a
