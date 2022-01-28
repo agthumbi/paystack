@@ -578,3 +578,21 @@ Code            | Description Message
 E1              | Internal service error.It could timeout with the network/database level
 E2              | Data not found or does not exists from the records
 E0              | General errors 
+
+
+## PART III : Overal System Design
+
+### Feature 
+
+- General Flow Design
+- System Design by exploring dockers
+- System Design using kubernetes
+
+#### General Flow Design
+
+
+#### System Design by exploring dockers
+
+
+#### System Design using kubernetes
+
