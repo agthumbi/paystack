@@ -649,7 +649,26 @@ We can also introduce data redundancy by having the necessay records in one tabl
 We can free the read load on data by having mirroring data to secondary databses.This can be achived by replicating the main transactional databse to 2 or similar structural databses.We write on the transactional database and red on secondary databses.This will improve performance and reduce overload of one particular database hadnling heavy requests.
 
 
- 
+#### Load Balancer
+
+We can increase the amount of load balancer to handle heavy load of requests coming from external network.Through layer 7 type,we can re-routing all the traffic to the respective server which has the micro service or has the a certain kubernetes that will route to a particular dockernized microservice.
+
+#### CDN
+
+We can use CDN technology to pull product images depending on the region to reduce the load of requesting of extracting images from  central location where servers are.
+
+#### Server
+
+We can have many servers which are sufficient and adequate enough power.Each server can have  dockers,or servers that are clustered,or have each server handling each microservies requests.
+
+Sharing workload explained above  will assist in overal performance of the shopping cart system  and customer will be happy to use it.
+
+
+
+
+
+
+
 
 
 
