@@ -592,12 +592,27 @@ E0              | General errors
 
 ![Paystack](https://github.com/agthumbi/paystack/blob/main/system_design/general_flow.PNG)
 
+##### Process Flow
+
+ 1. Request comes over external nextwork.
+ 2. Server recieves the request and pass it on to load balancer.Kindly note,load balancer with layer 7 will assist in routing
+ to a particular server or microservices inside the server to allow partitioning request handling.
+ 3. Load balancer will send the request to a server that is handling API calls of which has less workload or to the one that is idle
+ 4. API routing will then decide which microservices should handle such requests,but it has to pass through security check on security micro services
+ 5. Microservice will respond back with response either its an obvious call which it will just pick from caching tool or complex request that has to visit the database.
+
 #### System Design by exploring dockers
 
 ![Paystack](https://github.com/agthumbi/paystack/blob/main/system_design/design_flow_kubernetes.PNG)
+
+Above design is improving more on workload by introducing kubernetes ecosystem.
 
 
 #### System Design using kubernetes
 
 ![Paystack](https://github.com/agthumbi/paystack/blob/main/system_design/flow_design_rabbit.PNG)
+
+We can also improve more on the design by including queue tools such as rabbit m queue.
+
+
 
