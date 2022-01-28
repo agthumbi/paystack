@@ -590,9 +590,14 @@ E0              | General errors
 
 #### General Flow Design
 
+![Paystack](https://github.com/agthumbi/paystack/blob/main/system_design/general_flow.PNG)
 
 #### System Design by exploring dockers
 
+![Paystack](https://github.com/agthumbi/paystack/blob/main/system_design/design_flow_kubernetes.PNG)
+
 
 #### System Design using kubernetes
+
+![Paystack](https://github.com/agthumbi/paystack/blob/main/system_design/flow_design_rabbit.PNG)
 
