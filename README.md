@@ -664,7 +664,9 @@ We can add on to many servers which are sufficient and have adequate enough powe
 
 ## CONCLUSION
 
-Sharing workload explained above  will assist in overal performance of the shopping cart system y copying with the demand requests  and customer will be happy to use it at long run.
+Sharing workload explained above will assist in overal performance of the shopping cart system cooping with the demand requests and customer will be happy to use it at long run.
+
+The best way to achieve to achieve all this, mainly is by horizontal scaling from database to servers.
 
 
 
