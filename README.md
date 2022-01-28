@@ -612,7 +612,44 @@ Above design is improving more on workload by introducing kubernetes ecosystem.
 
 ![Paystack](https://github.com/agthumbi/paystack/blob/main/system_design/flow_design_rabbit.PNG)
 
-We can also improve more on the design by including queue tools such as rabbit m queue.
+We can also improve more on the design by including queue tools such as rabbit m queue to hanldle many requests from external nextwork
+
+
+## PART IV : MORE ON OPTIMIZATION
+
+### Feature 
+- Database
+- Load Balancer
+- CDN
+- Servers
+
+#### Databse
+
+There are various ways of optimizing the database bit
+ - Indexing
+ - Shading
+ - Replication
+ - Data redundancy
+
+
+##### Table Indexing
+ 
+ You can index tables on the search criteria such as on where clause.You can also index the most current data by use of configuring the primary identifier to return data in ascending order.
+ 
+##### Shading
+
+Another way to scale databse is through horizontal shading.We can have different servers with database installed into it to improve performance and optimization.We can have like 4 or more servers each handling different unique tables.Alternatively,you can also use similar table structure but have records that are stored alphabetically e.g users with last name state from  A-G ,H-M,N-T and so on.
+
+##### Data redundancy
+
+We can also introduce data redundancy by having the necessay records in one table instead of joining mulitple tables to increase performance.
+
+##### Data Replication/Databse mirroring
+
+We can free the read load on data by having mirroring data to secondary databses.This can be achived by replicating the main transactional databse to 2 or similar structural databses.We write on the transactional database and red on secondary databses.This will improve performance and reduce overload of one particular database hadnling heavy requests.
+
+
+ 
 
 
 
