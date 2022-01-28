@@ -4,6 +4,7 @@ var api = {}
 
 var response = {}
 
+// Category Listing
 api.getProductsCategory = async (req, res) => {
 
     const sqlq = require('../config/rawsql')
@@ -12,6 +13,8 @@ api.getProductsCategory = async (req, res) => {
 
     res.send(response)
 }
+
+// Fetch Product Listing by Category ID
 api.getProductsByCategoryID = async (req, res) => {
     let request = `categoryid`
     const payload = `categoryid`.split(',');
@@ -32,6 +35,8 @@ api.getProductsByCategoryID = async (req, res) => {
     return logic.final(response, res)
 
 }
+
+// Fetch Product Listing by Product ID
 api.getProductByProductID = async (req, res) => {
     let request = `productid`
     const payload = `productid`.split(',');

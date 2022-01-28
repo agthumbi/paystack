@@ -12,11 +12,13 @@ api.authenticate = async (req, res, next) => {
     //Leave alone status and landing page requests
     if (req.url === '/' || req.url === '/status')
         return next();
-
+    //check if nonce is provided
     if (nonce === null || nonce === '' || nonce === undefined)
         return res.status(403).json(defaultENonce)
+    //check if timestamp  is provided
     if (timestamp === null || timestamp === '' || timestamp === undefined)
         return res.status(403).json(defaultTimeStamp)
+    //check if signature is provided
     if (signature === null || signature === '' || signature === undefined)
         return res.status(403).json(defaultESignature)
 

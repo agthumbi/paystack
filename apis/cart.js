@@ -25,9 +25,10 @@ api.getAddCart = async (req, res) => {
     response = logic.validateResponse(result)
     return logic.final(response, res)
 }
+
 //Update Cart function
 api.getEditCart = async (req, res) => {
-    let request = `productid,isGuest,'session_id',qty`
+    let request = `productid,isGuest,session_id,qty`
     const payload = `productid,isGuest,session_id,qty`.split(',');
     let notifications = '';
     for (let field of payload) {
@@ -39,10 +40,12 @@ api.getEditCart = async (req, res) => {
     const sqlq = require('../config/rawsql')
 
     const result = await sqlq.query(`call psp_update_cart_by_session_id (${request});`)
+    console.log(result)
     response = logic.validateResponse(result)
 
     return logic.final(response, res)
 }
+
 //Remove Whole Item in a Cart function
 api.getRemoveCart = async (req, res) => {
     let request = `sessionid`
@@ -60,6 +63,8 @@ api.getRemoveCart = async (req, res) => {
 
     return logic.final(response, res)
 }
+
+//Remove an  item in a Cart function
 api.getRemoveItemCart = async (req, res) => {
     let request = `sessionid,productid`
 
@@ -77,6 +82,7 @@ api.getRemoveItemCart = async (req, res) => {
 
     return logic.final(response, res)
 }
+
 //View Cart function
 api.getViewCart = async (req, res) => {
     let totalAmount = 0
@@ -103,6 +109,7 @@ api.getViewCart = async (req, res) => {
 
     return logic.final(response, res)
 }
+
 //view checkout function
 api.getCheckout = async (req, res) => {
     let request = `sessionid`
