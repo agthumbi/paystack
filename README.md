@@ -659,9 +659,12 @@ We can use CDN technology to pull product images depending on the region to redu
 
 #### Server
 
-We can have many servers which are sufficient and adequate enough power.Each server can have  dockers,or servers that are clustered,or have each server handling each microservies requests.
+We can add on to many servers which are sufficient and have adequate enough power.Each server can have docker containers, or servers that are clustered,or have each server handling each microservies requests.
 
-Sharing workload explained above  will assist in overal performance of the shopping cart system  and customer will be happy to use it.
+
+## CONCLUSION
+
+Sharing workload explained above  will assist in overal performance of the shopping cart system y copying with the demand requests  and customer will be happy to use it at long run.
 
 
 
