@@ -4,8 +4,8 @@
   "description": "BE Coding Challenge",
   "main": "index.js",
   "scripts": {
-    "test": "jest --watch",
-    "start": "node index.js"
+    "start": "node index.js",
+    "test": "jest --watch  --detectOpenHandles "
   },
   "author": "Thumbi Antony",
   "license": "ISC",
@@ -19,5 +19,11 @@
     "morgan": "^1.10.0",
     "mysql2": "^2.3.3",
     "supertest": "^6.2.2"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ]
   }
 }
