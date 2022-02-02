@@ -97,10 +97,9 @@ logic.validateSignature =  (headers) => {
 
   
     const cipher = (timestamp) + '$$PAYSTACK$$' + (nonce)
-    console.log(cipher)
+   
     const matchSignature =  logic.getSignature(cipher)
-    console.log(signature)
-    console.log(matchSignature)
+    
     if ((matchSignature) === (signature))
         return true
     return false
