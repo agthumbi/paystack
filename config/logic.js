@@ -1,5 +1,6 @@
 const logic = {}
 const CryptoJS = require('crypto-js')
+//var format = /[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
 //error handler for all responses
 logic.response = (num, msg = '') => {
     const res = [
@@ -51,11 +52,22 @@ logic.validatePayload = (payload, field) => {
         return `${field} cannot be blank.Please enter a valid ${field}\n`;
     return ''
 }
+
+logic.CheckSpecialCharacters = (string) => {
+
+    const specialCharsSet = new Set("!@#$%^&*()_");
+    for (let letter of string) {
+        if (specialCharsSet.has(letter)) {
+            return true;
+        }
+    }
+    return false;
+}
 logic.ValidNonce = async (nonce) => {
-   
-    
+
+
     const seq = require('./sequel')
-   
+
 
 
 
@@ -70,7 +82,7 @@ logic.ValidNonce = async (nonce) => {
     newArr.push(nonce)
 
 
-  
+
     await seq.storeNonce(JSON.stringify(newArr))
     return true
 
@@ -78,9 +90,73 @@ logic.ValidNonce = async (nonce) => {
 
 
 }
+logic.GetSameSession = async () => {
+
+
+    const seq = require('./sequel')
+    var max = 0;
+
+
+
+    var arr = await seq.readStoredTestingSession();
+
+    arr = JSON.parse(arr)
+
+    let newArr = [...arr]
+    if (newArr.length <= 0) {
+        newArr.push(1)
+        await seq.storeTestingSession(JSON.stringify(newArr))
+        return 1
+
+    }
+    else {
+        max = Math.max(...newArr)
+        return max
+    }
+
+
+
+
+}
+logic.GetSession = async () => {
+
+
+    const seq = require('./sequel')
+    var max = 0;
+
+
+
+    var arr = await seq.readStoredTestingSession();
+
+    arr = JSON.parse(arr)
+
+
+
+
+
+    let newArr = [...arr]
+    if (newArr.length <= 0) {
+        newArr.push(1)
+        await seq.storeTestingSession(JSON.stringify(newArr))
+        return 1
+
+    }
+    else {
+        max = Math.max(...newArr)
+        newArr.push(Number(max) + 1)
+
+
+        await seq.storeTestingSession(JSON.stringify(newArr))
+        return Number(max) + 1
+    }
+
+
+
+
+}
 logic.ValidateStamp = (timestamp) => {
-   
-   
+
+
     const systamp = logic.timestamp()
     const timeWindow = Number(systamp) - Number(timestamp)
     if (timeWindow >= 0 && timeWindow <= 5)
@@ -91,15 +167,15 @@ logic.ValidateStamp = (timestamp) => {
 
 
 }
-logic.validateSignature =  (headers) => {
+logic.validateSignature = (headers) => {
     const { timestamp, nonce, signature } = headers
-  
 
-  
+
+
     const cipher = (timestamp) + '$$PAYSTACK$$' + (nonce)
-   
-    const matchSignature =  logic.getSignature(cipher)
-    
+
+    const matchSignature = logic.getSignature(cipher)
+
     if ((matchSignature) === (signature))
         return true
     return false
