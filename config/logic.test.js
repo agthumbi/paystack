@@ -13,7 +13,6 @@ test('Validate Same as above Nonce => Should be invalid :dajgdagsdagshdjgas34242
     const valid = await logic.ValidNonce('dajgdagsdagshdjgas34242');
     expect(valid).toBe(false)
 
-
 })
 const timestamp = logic.timestamp()
 test(`Validate TimeStamp => ${timestamp}`, async () => {
