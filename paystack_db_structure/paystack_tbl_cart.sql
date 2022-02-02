@@ -28,15 +28,24 @@ CREATE TABLE `tbl_cart` (
   `product_id` int(11) NOT NULL,
   `isGuest` tinyint(1) NOT NULL DEFAULT '1',
   `session_id` varchar(45) NOT NULL,
-  `created_date` varchar(45) NOT NULL DEFAULT 'SYSDATE',
   `qty` int(12) NOT NULL,
   `paid` tinyint(1) NOT NULL DEFAULT '0',
+  `created_date` datetime DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   KEY `productid_idx` (`product_id`) /*!80000 INVISIBLE */,
   KEY `id` (`id` DESC),
   CONSTRAINT `productid` FOREIGN KEY (`product_id`) REFERENCES `tbl_products` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=528 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=591 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_cart`
+--
+
+LOCK TABLES `tbl_cart` WRITE;
+/*!40000 ALTER TABLE `tbl_cart` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tbl_cart` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -47,4 +56,4 @@ CREATE TABLE `tbl_cart` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-01-28 22:57:07
+-- Dump completed on 2022-02-02 23:48:44

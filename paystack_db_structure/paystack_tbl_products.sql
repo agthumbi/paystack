@@ -39,6 +39,16 @@ CREATE TABLE `tbl_products` (
   CONSTRAINT `category_id` FOREIGN KEY (`category_id`) REFERENCES `tbl_categories` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_products`
+--
+
+LOCK TABLES `tbl_products` WRITE;
+/*!40000 ALTER TABLE `tbl_products` DISABLE KEYS */;
+INSERT INTO `tbl_products` VALUES (1,1,'shirt',10,'/cat_1/shirts.png','-',10,'2022-01-13 11:04:23',100,'TS'),(2,1,'jeans',12,'/cat_1/jeans.png','-',12,'2022-01-18 17:17:48',101,'JS'),(3,2,'2 seater',6,'/cat_2/2_seater.png','-',2000,'2022-01-26 18:48:26',201,'F2S'),(4,2,'3 seater',8,'/cat_2/3_seater.png','-',3400,'2022-01-26 18:48:26',NULL,'F3S');
+/*!40000 ALTER TABLE `tbl_products` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -49,4 +59,4 @@ CREATE TABLE `tbl_products` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-01-28 22:57:06
+-- Dump completed on 2022-02-02 23:48:43
