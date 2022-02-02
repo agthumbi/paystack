@@ -1,13 +1,14 @@
 var q = {}
 const connection = require('./connpool')
-q.query = async (rawquery) => {
+q.query = async (rawquery,array) => {
 
     //try {
     //  await poolConnect;
 
-
+    
     return new Promise((resolve, reject) => {
-        pool.query(rawquery, async(err, result) => {
+        pool.query(rawquery,array, async(err, result) => {
+            
             if (err) {
                 const result =  connection.handleConPool(err)
                  connection.recon()
